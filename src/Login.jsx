@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const nav = useNavigate();
   const [userInfo, setUserInfo] = useState({
     id: "",
     pw: "",
@@ -21,6 +23,9 @@ function Login() {
         .post("http://localhost:4000/login", { info: userInfo })
         .then((res) => {
           alert(res.data.msg);
+          nav("/");
+          window.location.reload();
+          /*로그인시 새로고침이 없으면 세션이 저장되었지만 불러와지지 않는 문제 발생 => window.location.reload()로 해결*/
         });
     } else {
       alert("정보가 입력되지 않았습니다.");
