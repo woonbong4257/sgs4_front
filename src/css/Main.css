@@ -1,0 +1,92 @@
+/* 전체 페이지 스타일 */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  /* 연한 배경색 */
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* 페이지 내용 감싸는 div */
+div {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 제목 스타일 */
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* 데이터 영역 감싸는 카드 스타일 */
+.data-section {
+  background-color: #ffffff;
+  /* 하얀 배경 */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* 부드러운 그림자 */
+  margin-top: 20px;
+  border-top: 5px solid #3498db;
+  /* 상단에 파란색 라인 추가 */
+}
+
+/* 데이터 항목 스타일 */
+.data-item {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #555;
+}
+
+/* 버튼 스타일 */
+button {
+  background-color: #3498db;
+  /* 파란색 */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+  /* 버튼 호버 색상 */
+}
+
+/* 로딩 상태 스타일 */
+.loading {
+  font-size: 18px;
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 반응형 디자인 - 작은 화면에서 조정 */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .data-section {
+    padding: 15px;
+  }
+
+  .data-item {
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
+    /* 버튼이 화면 너비를 채우도록 설정 */
+  }
+}

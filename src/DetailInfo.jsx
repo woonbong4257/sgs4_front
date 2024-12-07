@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./css/DetailInfo.css";
 
 function DetailInfo() {
   const { id } = useParams();
@@ -45,11 +46,11 @@ function DetailInfo() {
   if (!info) return <div>로딩중</div>;
 
   return (
-    <div>
+    <div className="detail-info-container">
       <h1>{info.name}님의 정보</h1>
       <h2>진단 정보</h2>
       {Object.keys(diagnoses).map((date) => (
-        <div key={date} style={{ marginBottom: "20px" }}>
+        <div key={date}>
           <h3>{date}</h3>
           <ul>
             {diagnoses[date].map((record, index) => (
@@ -65,7 +66,7 @@ function DetailInfo() {
 
       <h2>처방 정보</h2>
       {Object.keys(prescriptions).map((date) => (
-        <div key={date} style={{ marginBottom: "20px" }}>
+        <div key={date}>
           <h3>{date}</h3>
           <ul>
             {prescriptions[date].map((record, index) => (

@@ -1,0 +1,62 @@
+/* 기본적인 레이아웃 설정 */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 14px;
+  /* 패딩을 더 줄여서 크기 감소 */
+  background-color: #3498db;
+  color: white;
+  font-size: 13px;
+  /* 글자 크기를 좀 더 줄임 */
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* 그림자 크기 조금 줄임 */
+}
+
+/* 헤더 버튼들에 대한 스타일 */
+.header-container span {
+  cursor: pointer;
+  padding: 5px 10px;
+  /* 각 버튼의 패딩을 줄여서 크기 감소 */
+  margin: 0 6px;
+  /* 버튼 간 간격을 조금 더 좁힘 */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 버튼에 마우스 오버 시 */
+.header-container span:hover {
+  background-color: #2980b9;
+  color: #ecf0f1;
+}
+
+/* 버튼 클릭 시 효과 */
+.header-container span:active {
+  transform: scale(0.98);
+}
+
+/* 로그인 상태에서 버튼 배열 */
+.logged-in {
+  display: flex;
+  justify-content: flex-start;
+  /* 로그인 상태에서는 왼쪽 정렬 */
+  align-items: center;
+}
+
+.logged-out {
+  display: flex;
+  justify-content: flex-end;
+  /* 로그아웃 상태에서는 오른쪽 정렬 */
+  align-items: center;
+}
+
+/* 각 버튼에 맞게 스타일을 다르게 적용 (옵션) */
+.logged-in span {
+  color: #f1f1f1;;
+  /* 로그인된 상태에서 버튼 색상 */
+}
+
+.logged-out span {
+  color: #ecf0f1;
+  /* 로그아웃된 상태에서 버튼 색상 */
+}

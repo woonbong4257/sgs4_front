@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./css/Patient.css";
 
 function Patient() {
   const nav = useNavigate();
@@ -15,10 +16,10 @@ function Patient() {
 
   /* 불러온 환자 정보를 테이블 형태로 출력 */
   return (
-    <div>
+    <div className="patient-container">
       <h1>환자정보조회</h1>
       <button onClick={() => nav("/detail")}>환자 등록 하기</button>
-      <table border="1" style={{ marginTop: "20px", width: "100%" }}>
+      <table className="patient-table">
         <thead>
           <tr>
             <th>이름</th>

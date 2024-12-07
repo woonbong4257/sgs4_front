@@ -1,0 +1,71 @@
+/* 환자정보조회 페이지의 기본 레이아웃 */
+.patient-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* 페이지 제목 */
+.patient-container h1 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 환자 등록 버튼 */
+.patient-container button {
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+  align-self: center;
+  /* 버튼 중앙 정렬 */
+}
+
+.patient-container button:hover {
+  background-color: #2980b9;
+}
+
+/* 테이블 스타일 */
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.patient-table th,
+.patient-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.patient-table th {
+  background-color: #3498db;
+  color: white;
+}
+
+.patient-table td {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.patient-table td:hover {
+  background-color: #ecf0f1;
+}
+
+.patient-table tr:hover {
+  background-color: #f1f1f1;
+}

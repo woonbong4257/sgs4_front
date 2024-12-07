@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./css/Header.css";
 
 function Header() {
   const nav = useNavigate();
-  const [userInfo, setUserInfo] = useState("");
+  const [userInfo, setUserInfo] = useState(null);
   const [type, setType] = useState("");
 
   /* 백엔드에 저장된 세션을 헤더에 적용하여 의사와 간호사 기능에 제한을 둠 */
@@ -12,15 +13,16 @@ function Header() {
 
   useEffect(() => {
     axios.get("http://localhost:4000").then((res) => {
-      setUserInfo(res.data.user);
-      setType(res.data.type);
+      setUserInfo(res.data.user); // 로그인한 사용자 정보
+      setType(res.data.type); // 사용자 타입 (의사, 간호사)
     });
   }, []);
-  console.log(type);
 
   function onClickLogOut() {
     axios.post("http://localhost:4000/logout").then((res) => {
       alert(res.data.msg);
+      setUserInfo(null);
+      setType("");
       nav("/");
       window.location.reload();
     });
@@ -51,6 +53,7 @@ function Header() {
       nav("/login");
     }
   }
+
   function onClickClin() {
     if (userInfo) {
       if (type === "doctor") {
@@ -79,21 +82,23 @@ function Header() {
     }
   }
 
+  //삼항 연산자를 사용해서 로그인했을때 조건부로 로그아웃 출력
   return (
-    <div>
-      <span
-        onClick={() => {
-          nav("/");
-        }}
-      >
-        메인
-      </span>
-      <span onClick={onClickLogin}>로그인 </span>
-      <span onClick={onClickLogOut}>로그아웃 </span>
-      <span onClick={onClickMyPage}>마이페이지 </span>
-      <span onClick={onClickSearch}>환자정보조회 </span>
-      <span onClick={onClickClin}>진료 등록 </span>
-      <span onClick={onClickPers}>치료 등록 </span>
+    <div className="header-container">
+      <span onClick={() => nav("/")}>메인</span>
+      {userInfo ? (
+        <div className="logged-in">
+          <span onClick={onClickLogOut}>로그아웃</span>
+          <span onClick={onClickMyPage}>마이페이지</span>
+          <span onClick={onClickSearch}>환자정보조회</span>
+          {type === "doctor" && <span onClick={onClickClin}>진료 등록</span>}
+          {type === "nurse" && <span onClick={onClickPers}>치료 등록</span>}
+        </div>
+      ) : (
+        <div className="logged-out">
+          <span onClick={onClickLogin}>로그인</span>
+        </div>
+      )}
     </div>
   );
 }

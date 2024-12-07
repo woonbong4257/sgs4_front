@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import "./css/InsertClinic.css";
 
 function InsertClinic() {
   const [clinicInfo, setClinicInfo] = useState({
@@ -30,23 +31,23 @@ function InsertClinic() {
   }
 
   return (
-    <div>
+    <div className="container">
       <h1>진료 등록</h1>
-      <label htmlFor="">환자 주민번호</label>
+      <label>환자 주민번호</label>
       <input
         type="text"
         name="name"
         value={clinicInfo.name}
         onChange={onChangeClinic}
       />
-      <label htmlFor="">병명</label>
+      <label>병명</label>
       <input
         type="text"
         name="dis"
         value={clinicInfo.dis}
         onChange={onChangeClinic}
       />
-      <label htmlFor="">진료내용</label>
+      <label>진료내용</label>
       <input
         type="text"
         name="info"

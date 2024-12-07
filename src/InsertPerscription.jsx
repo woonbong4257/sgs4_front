@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import "./css/InsertPers.css";
 
 function InsertPerscription() {
   /* 
@@ -24,20 +25,20 @@ useState를 객체로 사용함
   }
 
   return (
-    <div>
-      <h1>치료 등록</h1>
-      <label htmlFor="">치료명</label>
+    <div className="container">
+      <h1>처방 등록</h1>
+      <label>치료명</label>
       <input
         type="text"
         name="pers"
         value={persInfo.pers}
         onChange={onChangePers}
       />
-      <label htmlFor="">환자 주민번호</label>
+      <label>환자 주민번호</label>
       <input
         type="text"
         name="name"
-        value={persInfo.dis}
+        value={persInfo.name}
         onChange={onChangePers}
       />
       <button onClick={onClickPers}>등록하기</button>

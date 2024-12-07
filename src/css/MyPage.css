@@ -1,0 +1,63 @@
+/* 마이페이지 기본 스타일 */
+.mypage-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f4f6f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mypage-container h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* 사용자 정보 레이아웃 */
+.info-section {
+  font-size: 16px;
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.info-section div {
+  margin-bottom: 12px;
+}
+
+/* 직급에 따른 스타일 */
+.type-info {
+  font-weight: bold;
+  color: #2980b9;
+}
+
+/* 담당 의사 및 간호사 리스트 */
+.list-section {
+  margin-top: 20px;
+}
+
+.list-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-section li {
+  background-color: #ecf0f1;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.list-section li:hover {
+  background-color: #bdc3c7;
+}
+
+/* 로딩 상태 */
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #3498db;
+}

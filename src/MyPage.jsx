@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import "./css/MyPage.css";
 
 function MyPage() {
   const [info, setInfo] = useState(null); // 초기값을 null로 설정
@@ -22,29 +23,31 @@ function MyPage() {
   }
 
   return (
-    <div>
+    <div className="mypage-container">
       <h1>마이페이지</h1>
-      <div>
+      <div className="info-section">
         <div>이름: {info.name}</div>
-        <div>직급: {info.type === "의사" ? "의사" : "간호사"}</div>
+        <div className="type-info">
+          직급: {info.type === "의사" ? "의사" : "간호사"}
+        </div>
         <div>부서: {info.dep}</div>
         <div>위치: {info.loc}</div>
-        {info.type === "의사" && (
-          <div>
-            <div>담당 간호사들:</div>
-            <ul>
-              {info.nur.map((nurse, index) => (
-                <li key={index}>{nurse.name}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-        {info.type === "간호사" && (
-          <div>
-            <div>담당 의사: {info.doc}</div>
-          </div>
-        )}
       </div>
+      {info.type === "의사" && (
+        <div className="list-section">
+          <div>담당 간호사들:</div>
+          <ul>
+            {info.nur.map((nurse, index) => (
+              <li key={index}>{nurse.name}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {info.type === "간호사" && (
+        <div className="list-section">
+          <div>담당 의사: {info.doc}</div>
+        </div>
+      )}
     </div>
   );
 }
